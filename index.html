@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script src="dist/openlayers/include-openlayers.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="./index.css">
+		<link rel="stylesheet" href="./index.js">
 		<style>
 			
 		</style>
@@ -13,7 +15,7 @@
 	</body>
 	<script type="text/javascript">
 		function onPageLoad () {
-			var url="http://127.0.0.1:8090/iserver/services/map-China100/rest/maps/China";
+			//var url="http://127.0.0.1:8090/iserver/services/map-China100/rest/maps/China";
 			var map = new ol.Map({
 					  view: new ol.View({
 					    center: [0, 0],
@@ -21,7 +23,8 @@
 					  }),
 					  layers: [
 					    new ol.layer.Tile({
-					      source: new ol.source.TileSuperMapRest({url:url})
+					      //source: new ol.source.TileSuperMapRest({url:url})
+						  source:new ol.source.OSM()
 					    })
 					  ],
 					  target: 'map'
